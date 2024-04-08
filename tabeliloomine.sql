@@ -15,3 +15,11 @@ use ValtsiferLOGITpv22;
  --identity - määrab igaühele oma nubri
 
 select * from opilane
+
+--admete lisamine
+insert into opilane(
+eesnimi, perenimi, isikukood, aadress, sisseastumis_kp)
+VALUES
+('Adolf', 'Osipov', '87878787878', 'Haapsalu', '2023-08-16'),
+('Nill', 'Kiggers', '22822822802', 'Narva', '2023-12-01');
+select * from opilane;
