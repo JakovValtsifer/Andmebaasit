@@ -7,3 +7,9 @@ kirjed - записи
 väljad - поля	
 andmed - данные
 väärtused - значения
+
+check
+primary key
+foreign key
+nut null
+unique
