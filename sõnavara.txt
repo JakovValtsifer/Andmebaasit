@@ -1,0 +1,9 @@
+andmebaas - база данных 
+andmebaaside haldussüsteem - система управления базой данных 
+tabel - табель
+rida - строка
+veerg -  
+kirjed - записи
+väljad - поля	
+andmed - данные
+väärtused - значения
