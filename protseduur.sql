@@ -62,3 +62,17 @@ insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('Other F Word
 insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('Pusher', 225, 'Sisson', 2005);
 
 select * from film
+
+
+select * from film;
+--filmiNimetuse otsing esimese tähe järgi
+create procedure otsing1taht
+@taht char(1)
+as
+begin
+	select *from film
+	where filmNimetus like CONCAT(@taht, '%');
+end;
+
+--käivitamine
+exec otsing1taht 'A';
