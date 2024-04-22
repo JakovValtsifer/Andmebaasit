@@ -98,3 +98,18 @@ as
 select COUNT(*) as 'filmide Arv' from film;
 
 exec filmideArv;
+
+
+--proceduur  mis täidab tabeli film
+create procedure lisafilm
+@uusfilm varchar(50),
+@kestvus int,
+@rezisoor varchar(50),
+@aasta int
+as
+Begin
+insert into film (filmNimetus, kestvus, rezisoor, v_aasta)
+values (@uusfilm, @kestvus, @rezisoor, @aasta);
+select * from film;
+end;
+exec lisafilm 'test', 222, 'test', 2000;
