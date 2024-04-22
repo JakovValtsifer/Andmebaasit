@@ -2,6 +2,7 @@ git config --global user.name "Jakov Valtsifer"
 git config --global user.email "j.valcifer@gmail.com"
 git config --global --list
 git status
+git clone "github link"
 
 ----------
 kui tekkinud uus fail ja salvestanud, siis on vaja add ja commit
