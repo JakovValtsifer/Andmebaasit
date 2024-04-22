@@ -127,3 +127,61 @@ where filmNimetus=@filmNimetus;
 select * from film where filmNimetus=@filmNimetus;;
 end;
 exec uuendaRezisorFilmis 'oskar Luts', 'test';
+
+
+
+create table jaatis(
+jaatised int primary key identity(1,1),
+jaatiseNimetus varchar(20),
+jaatiseMaitse varchar(20),
+jaatisekoonus varchar(20));
+select * from jaatis;S
+
+
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Väike Tom', 'vaniil', 'pulga');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Vana Toomas', 'vaniili', 'pulga');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('nublik', 'karamel', 'pulga');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Ben&Jerries', 'brownie ja küpsised', 'taasis');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Premia', 'mango', 'koonuse');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Eriti Rammus', 'šokolaadi', 'koonuse');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Onu eskimo', 'šokolaadi', 'koonuse');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Balbiino', 'maasika', 'taasis');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('Twister', 'sidrun', 'pulga');
+insert into jaatis (jaatiseNimetus, jaatiseMaitse, jaatisekoonus) values ('vanilla ninja', 'vaniili', 'pulga');
+
+select * from jaatis;
+drop table jaatis
+
+--jaatise otsing esimese tähe järgi
+create procedure otsing2taht
+@tahtja char(1)
+as
+begin
+	select *from jaatis
+	where jaatiseNimetus like CONCAT(@tahtja, '%');
+end;
+
+--käivitamine
+exec otsing2taht 'v';
+
+--proceduur, mis loeb jaatise arv kokku
+create procedure jaatiseArv
+as
+select COUNT(*) as 'jaatise Arv' from jaatis;
+
+exec jaatiseArv;
+
+
+
+--proceduur  mis täidab tabeli jaatis
+create procedure lisajaatis
+@uusjaatis varchar(50),
+@jaatiseMaitse varchar(50),
+@jaatisekoonus varchar(20)
+as
+Begin
+insert into jaatis (jaatiseNimetus, jaatiseMaitse,jaatisekoonus)
+values (@uusjaatis, @jaatiseMaitse, @jaatisekoonus);
+select * from jaatis;S
+end;
+exec lisajaatis 'test', 'test', 'test';
