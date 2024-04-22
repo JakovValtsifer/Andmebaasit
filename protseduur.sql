@@ -76,3 +76,16 @@ end;
 
 --käivitamine
 exec otsing1taht 'A';
+
+
+--protseduur mis kustutab sisestatud id järgi
+create procedure kustutaFilm
+@id int
+as
+begin
+select * from film;
+delete from film where filmid=@id;
+select * from film;
+end;
+
+exec kustutaFilm 6;
