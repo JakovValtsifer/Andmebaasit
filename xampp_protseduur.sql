@@ -72,5 +72,17 @@ delete from film where filmid=@id;
 select * from film;
 end;
 
+--proceduur, mis loeb filmid arv kokku
+as
+select COUNT(*) as 'filmide Arv' from film;
+
+
+--proceduur, mis uuendab rezisoori andmed filmiNimi järgi
+
+Begin
+insert into film (filmNimetus, kestvus, rezisoor, v_aasta)
+values (@uusfilm, @kestvus, @rezisoor, @aasta);
+select * from film;
+end;
 
 
