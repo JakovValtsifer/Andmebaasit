@@ -222,7 +222,7 @@ select * from Employees
 --- eemaldab dubleerivad nimed
 select distinct Name, DepartmentId from Employees
 
----?
+--- summeerib kõiked palkad
 select sum(cast(Salary as int)) from Employees
 ---?
 select min(cast(Salary as int)) from Employees
