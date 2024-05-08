@@ -351,7 +351,7 @@ declare @Name nvarchar(50)
 execute spGetNameById1 6, @Name output
 print 'Name of the employee = ' + @Name
 
---?
+--tagastab antud identifikaatori juures töötaja nime.
 create proc spGetNameById2
 @Id int
 as begin
