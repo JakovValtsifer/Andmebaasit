@@ -213,13 +213,13 @@ values (7, 'Sara', 'Female', 4800, 3)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (8, 'Valarie', 'Female', 5500, 1)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (9, 'James', 'Male', 6500, NULL)
+values (9, 'James', 'Male', 6500, 3)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (10, 'Russell', 'Male', 8800, NULL)
+values (10, 'Russell', 'Male', 8800, 3)
 
 select * from Employees
 
----?
+--- eemaldab dubleerivad nimed
 select distinct Name, DepartmentId from Employees
 
 ---?
