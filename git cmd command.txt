@@ -9,3 +9,7 @@ kui tekkinud uus fail ja salvestanud, siis on vaja add ja commit
 git add.
 git commit -a -m "Põhi ab sõnad on lisatud"
 git push
+
+
+git branch 
+git checkout
