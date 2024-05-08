@@ -33,7 +33,8 @@ values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--- alter table Person add constraint tblPerson_GenderId_FK --> muudab tabelit Isik ja lisab piirangu nimega tblPerson_GenderId_FK
+--- foreign key (GenderId) references Gender(Id) --> loob võõrvõtme veerus GenderId ja viitab tabeli Gender veerule Id
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
