@@ -33,7 +33,7 @@ values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- alter table Person add constraint tblPerson_GenderId_FK --> muudab tabelit Isik ja lisab piirangu nimega tblPerson_GenderId_FK
+--- alter table Person add constraint tblPerson_GenderId_FK --> muudab tabelit Person ja lisab piirangu nimega tblPerson_GenderId_FK
 --- foreign key (GenderId) references Gender(Id) --> loob võõrvõtme veerus GenderId ja viitab tabeli Gender veerule Id
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
@@ -87,14 +87,15 @@ update Person
 set Age = 149
 where Id = 8
 
--- lisab tabelile Isik piirangu, mis kontrollib, et väärtus veerus Vanus peab olema suurem kui 0 ja väiksem kui 150.
+-- lisab tabelile Person piirangu, mis kontrollib, et väärtus veerus Vanus peab olema suurem kui 0 ja väiksem kui 150.
+-- (9, 'Test', 'Test', 2, 160) ei ole võimalik teha sest vanus on rohkem kui 150 aastad
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
 
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
---?
+-- kustuda tabelist Person rida kus on id =8
 select * from Person
 go
 delete from Person where Id = 8
