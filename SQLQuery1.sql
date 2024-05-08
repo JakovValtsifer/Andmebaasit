@@ -346,7 +346,7 @@ as begin
 	select @Name = Name from employees where Id = @Id
 end
 
---?
+--nimede salvestus
 declare @Name nvarchar(50)
 execute spGetNameById1 6, @Name output
 print 'Name of the employee = ' + @Name
