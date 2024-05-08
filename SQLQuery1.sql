@@ -8,14 +8,16 @@
 create database LOGITpv22
 --git add.
 --git commit -a -m "db loomine"
+--CTRL +S
+use LOGITpv22;
 
-
---?
+--tabeli Gender loomine
 create table Gender
 (
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
+
 
 create table Person
 (
