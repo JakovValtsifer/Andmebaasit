@@ -133,7 +133,7 @@ select * from Person where Email like '_@_.com'
 
 -- valida rida tabelis Person kellel on nimi, kus on tähed W A S, aga ükskõik mis järjekorras
 select * from Person where Name like '[^WAS]%'
---- ?
+--- valida rida tabelis Person kellel on linn Gotham või New York ja vanus on väiksem või võrdub 40
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
