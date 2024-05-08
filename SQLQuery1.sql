@@ -146,7 +146,7 @@ select top 3 Age, Name from Person
 
 --- näitab esimesed 50% tabelis
 select top 50 percent * from Person
---?
+--muudab rida Age täisarvudeni ja pärast sorteerib tabelis Person kirjed otse veeru Age järgi.
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
