@@ -305,7 +305,7 @@ spGetEmployeesByGenderAndDepartment @DepartmentId =  1, @Gender = 'Male'
 
 
 
--- 
+-- loob protseduuri mis näitab sugu
 create proc spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
@@ -327,7 +327,7 @@ declare @TotalCount int
 exec spGetEmployeeCountByGender @EmployeeCount = @TotalCount out, @Gender = 'Male'
 print @TotalCount
 
----?
+--- loendab kirjete koguarvu
 create proc spTotalCount2
 @TotalCount int output
 as begin
