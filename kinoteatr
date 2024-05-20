@@ -37,7 +37,7 @@ select * from kinokava
 insert into kinokava (kuupaevKellaaeg, piletihind, filmNimetus)
 VALUES ('2024-03-26', '8' ,13 )
 
---piletimüük
+-- tabel piletimüük
 CREATE TABLE piletiMyyk(
 piletiMyykId int primary key identity(1,1),
 kogus int,
